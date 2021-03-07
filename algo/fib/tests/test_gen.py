@@ -2,7 +2,7 @@
 
 """Tests for `fibgen` function."""
 
-from fixture import list_10
+from fixture import list_fib
 
 
 from fib import gen
@@ -24,8 +24,8 @@ def test_1():
     assert [0, 1] == make_list(1)
 
 
-def test_0_to_10(list_10):
-    for i in range(11):
-        expected = list_10[:(i + 1)]
+def test_list(list_fib):
+    for i in range(len(list_fib)):
+        expected = list_fib[:(i + 1)]
         actual = make_list(i)
         assert expected == actual
