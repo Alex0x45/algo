@@ -34,26 +34,26 @@ def memofib(n):
 def fastfib(n):
 
     def f2n_and_f2n1(n):
-        
+
         def fn_to_f2n(fn, fn1):
             f2n = fn * (2 * fn1 - fn)
             f2n1 = fn1 * fn1 + fn * fn
             return (f2n, f2n1)
-            
+
         if n == 0:
             return (0, 1)
         elif n == 1:
             return (1, 2)
-        else:   
-            k = n // 2 
+        else:
+            k = n // 2
             (f2k, f2k1) = f2n_and_f2n1(k)
-            (fn, fn1) = (f2k, f2k1) if n %2 == 0 else (f2k1, f2k + f2k1)
+            (fn, fn1) = (f2k, f2k1) if n % 2 == 0 else (f2k1, f2k + f2k1)
             (f2n, f2n1) = fn_to_f2n(fn, fn1)
             return (f2n, f2n1)
 
     if n <= 0:
         return 0
 
-    l = n // 2
-    (f2l, f2l1) = f2n_and_f2n1(l)
-    return f2l if n % 2 == 0 else f2l1
+    m = n // 2
+    (f2m, f2m1) = f2n_and_f2n1(m)
+    return f2m if n % 2 == 0 else f2m1

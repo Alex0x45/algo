@@ -2,9 +2,6 @@
 
 """Tests for `memofib` function."""
 
-from fixture import list_fib
-
-
 from fib import gen
 
 
