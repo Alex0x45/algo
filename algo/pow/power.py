@@ -4,7 +4,7 @@
 def recpow(b, n):
 
     def accpow(b, n, acc):
-        
+
         if n == 0:
             return acc
         elif n % 2 == 0:
@@ -24,5 +24,5 @@ def pow(b, n):
 
         n //= 2
         b = b * b
-    
+
     return acc
