@@ -3,16 +3,6 @@
 
 def recpow(b, n):
 
-    if n == 0:
-        return 1
-    elif n % 2 == 0:
-        return recpow(b * b, n // 2)
-    else:
-        return recpow(b * b, (n - 1) // 2) * b
-
-
-def pow(b, n):
-
     def accpow(b, n, acc):
         
         if n == 0:
@@ -22,7 +12,17 @@ def pow(b, n):
         else:
             return accpow(b * b, (n - 1) // 2, acc * b)
 
-    if n == 0:
-        return 1
-    else:
-        return accpow(b, n, 1)
+    return accpow(b, n, 1)
+
+
+def pow(b, n):
+
+    acc = 1
+    while n > 0:
+        if n % 2 == 1:
+            acc *= b
+
+        n //= 2
+        b = b * b
+    
+    return acc
